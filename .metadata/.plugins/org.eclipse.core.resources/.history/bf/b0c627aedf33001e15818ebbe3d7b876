@@ -1,0 +1,26 @@
+package prime_recursive;
+
+public class PrimeNumbers {
+	
+	public static void findMultiples(boolean primes[], int num, int n) {
+		for (int i = 2 * num; i <= n; i += num) {
+			primes[i] = true;
+		}
+	}
+	
+	public static void findPrimes(boolean primes[], int n, int i) {
+		
+		if (i * i <= n) {
+			if (primes[i] == false) {
+				findMultiples(primes, i, n);
+			}
+			findPrimes(primes, n, i +1);
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,48 @@
+package linear_fibonnaci;
+
+import java.util.Scanner;
+
+public class fibonnaciPosition {
+
+	public static void findPosition(int n) {
+		int position = 0;
+		int x = 0;
+		int y = 0;
+		int aux;
+		
+		while (y <= n) {
+			aux = x + y;
+			x = y;
+			y = aux;
+			position++;
+		}
+		
+		if (y != n) {
+			System.out.printf("This number is not part of the Fibonacci sequence.");
+		} else {
+			System.out.printf("Number position in Fibonnaci sequence: %d\n", position);
+		}
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int n;
+		
+		do {
+			System.out.print("Enter an integer number greater than or equal to 0:");
+			while(!scanner.hasNextInt()) {
+				System.out.print("Invalid input. Enter an integer number greater than 1: ");
+				scanner.next();
+			}
+			n = scanner.nextInt();
+		} while (n < 0);
+		
+		findPosition(n);
+		
+		scanner.close();
+
+	}
+
+}

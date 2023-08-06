@@ -1,0 +1,51 @@
+package linear_fibonnaci;
+
+import java.util.Scanner;
+
+public class fibonnaciPosition {
+
+	public static void findValue(int n) {
+		//int position = 0;
+		int x = 0;
+		int y = 1;
+		int aux;
+
+		for (int i = 0; i <= n; i++) {
+			if (i == n) {
+				System.out.printf("Number of this position in Fibonnaci sequence: %d\n", y);
+			} else {
+				aux = x + y;
+				x = y;
+				y = aux;
+			}
+		}
+		/*while (position < n) {
+			aux = x + y;
+			x = y;
+			y = aux;
+			position++;
+		}
+		System.out.printf("Number of this position in Fibonnaci sequence: %d\n", y);*/
+		
+	}
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int n;
+		
+		do {
+			System.out.print("Enter an integer number greater than or equal to 0: ");
+			while(!scanner.hasNextInt()) {
+				System.out.print("Invalid input. Enter an integer number greater than or equal to 0: ");
+				scanner.next();
+			}
+			n = scanner.nextInt();
+		} while (n < 0);
+		
+		findValue(n);
+		
+		scanner.close();
+
+	}
+
+}

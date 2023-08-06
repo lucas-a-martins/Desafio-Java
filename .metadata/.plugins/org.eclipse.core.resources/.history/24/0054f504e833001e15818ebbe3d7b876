@@ -1,0 +1,21 @@
+package linear_fibonnaci;
+
+public class fibonnaciPosition {
+
+	public static void findPosition(int n) {
+		int position = 0;
+		int x = 0;
+		int y = 1;
+		
+		while (y <= n) {
+			y += 0;
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

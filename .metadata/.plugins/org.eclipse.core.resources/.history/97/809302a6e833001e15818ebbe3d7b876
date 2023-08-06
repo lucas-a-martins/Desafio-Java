@@ -1,0 +1,41 @@
+package linear_fibonnaci;
+
+import java.util.Scanner;
+
+public class fibonnaciPosition {
+
+	public static void findPosition(int n) {
+		int position = 0;
+		int x = 0;
+		int y = 1;
+		int aux;
+		
+		while (y <= n) {
+			aux = x + y;
+			x = y;
+			y = aux;
+			position++;
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int n;
+		
+		do {
+			System.out.print("Enter an integer number greater than 1:");
+			while(!scanner.hasNextInt()) {
+				System.out.print("Invalid input. Enter an integer number greater than 1: ");
+				scanner.next();
+			}
+			n = scanner.nextInt();
+		} while (n <= 1);
+		
+		findPosition(int n);
+		
+		scanner.close();
+
+	}
+
+}
